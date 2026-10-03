@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>InvenTech - Sistem Inventaris Toko</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen flex flex-col">
+
+  <!-- 1. NAVIGASI (NAVBAR RESPONSIV) -->
+  <nav class="bg-blue-600 text-white shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <span class="font-bold text-xl tracking-wide">InvenTech</span>
+        </div>
+        
+        <!-- Menu Desktop -->
+        <div class="hidden md:flex space-x-4">
+          <a href="#dashboard" class="px-3 py-2 rounded-md text-sm font-medium bg-blue-800 hover:bg-blue-700 transition">Dashboard</a>
+          <a href="#tabel-data" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500 transition">Daftar Barang</a>
+          <a href="#form-tambah" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-blue-500 transition">Tambah Barang</a>
+        </div>
+
+        <!-- Tombol Hamburger Mobile -->
+        <div class="md:hidden">
+          <button id="menu-btn" class="p-2 rounded-md hover:bg-blue-500 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Menu Mobile Dropdown -->
+    <div id="mobile-menu" class="hidden md:hidden bg-blue-700 px-4 pt-2 pb-4 space-y-2">
+      <a href="#dashboard" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800">Dashboard</a>
+      <a href="#tabel-data" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800">Daftar Barang</a>
+      <a href="#form-tambah" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-blue-800">Tambah Barang</a>
+    </div>
+  </nav>
+
+  <!-- KONTEN UTAMA -->
+  <main class="flex-1 max-w-7xl w-full mx-auto p-4 sm:p-6 lg:p-8 space-y-12">
+
+    <!-- 2. HALAMAN UTAMA / DASHBOARD (GRID LAYOUT) -->
+    <section id="dashboard" class="space-y-6">
+      <h1 class="text-2xl font-bold text-gray-800 border-b pb-2">Dashboard Utama</h1>
+      
+      <!-- Grid Statistik -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+          <h3 class="text-gray-500 text-sm font-medium">Total Produk</h3>
+          <p class="text-3xl font-bold text-blue-600 mt-2">65 Item</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+          <h3 class="text-gray-500 text-sm font-medium">Stok Menipis</h3>
+          <p class="text-3xl font-bold text-amber-500 mt-2">3 Item</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+          <h3 class="text-gray-500 text-sm font-medium">Total Nilai Inventaris</h3>
+          <p class="text-3xl font-bold text-emerald-600 mt-2">Rp 124.500.000</p>
+        </div>
+      </div>
+
+      <!-- Banner Informasi -->
+      <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r-lg">
+        <p class="text-blue-700 text-sm">
+          Selamat datang di Sistem Inventaris InvenTech. Halaman ini disiapkan sebagai kerangka tampilan (frontend skeleton) sebelum terhubung ke backend.
+        </p>
+      </div>
+    </section>
+
+    <!-- 3. HALAMAN TABEL / DAFTAR DATA -->
+    <section id="tabel-data" class="space-y-6 pt-6">
+      <h2 class="text-2xl font-bold text-gray-800 border-b pb-2">Daftar Inventaris Barang</h2>
+      
+      <div class="bg-white shadow-sm rounded-lg overflow-hidden border border-gray-200">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-gray-50 border-b border-gray-200 text-xs font-semibold text-gray-600 uppercase">
+                <th class="p-4">ID</th>
+                <th class="p-4">Nama Barang</th>
+                <th class="p-4">Kategori</th>
+                <th class="p-4">Stok</th>
+                <th class="p-4">Harga</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200 text-sm text-gray-700">
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-mono">1</td>
+                <td class="p-4 font-medium text-gray-900">Laptop Asus Zenbook</td>
+                <td class="p-4">Elektronik</td>
+                <td class="p-4">
+                  <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">15 Unit</span>
+                </td>
+                <td class="p-4">Rp 14.500.000</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-mono">2</td>
+                <td class="p-4 font-medium text-gray-900">Mouse Wireless Logitech</td>
+                <td class="p-4">Aksesori</td>
+                <td class="p-4">
+                  <span class="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-semibold">42 Unit</span>
+                </td>
+                <td class="p-4">Rp 250.000</td>
+              </tr>
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-mono">3</td>
+                <td class="p-4 font-medium text-gray-900">Keyboard Mekanikal</td>
+                <td class="p-4">Aksesori</td>
+                <td class="p-4">
+                  <span class="bg-red-100 text-red-700 px-2 py-1 rounded-full text-xs font-semibold">3 Unit</span>
+                </td>
+                <td class="p-4">Rp 750.000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. HALAMAN FORM INPUT DATA -->
+    <section id="form-tambah" class="pt-6">
+      <div class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow-sm border border-gray-200 space-y-6">
+        <h2 class="text-2xl font-bold text-gray-800 border-b pb-3">Tambah Produk Baru</h2>
+        
+        <form onsubmit="event.preventDefault();" class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Barang</label>
+            <input type="text" placeholder="Masukkan nama barang" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Kategori</label>
+              <select class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                <option value="">Pilih Kategori</option>
+                <option value="elektronik">Elektronik</option>
+                <option value="aksesori">Aksesori</option>
+                <option value="pakaian">Pakaian</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1">Jumlah Stok</label>
+              <input type="number" placeholder="0" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Harga (Rp)</label>
+            <input type="text" placeholder="Contoh: 150000" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded-md font-medium hover:bg-blue-700 transition">
+              Simpan Produk
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script Sederhana untuk Toggle Mobile Menu -->
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>
